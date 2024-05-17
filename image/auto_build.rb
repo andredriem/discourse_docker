@@ -6,36 +6,36 @@ require "optparse"
 images = {
   base_slim: {
     name: "base",
-    tag: "discourse/base:build_slim",
+    tag: "andredriem/discourse:build_slim",
     extra_args: "-f slim.Dockerfile",
   },
   base_slim_arm64: {
     name: "base",
-    tag: "discourse/base:build_slim_arm64",
+    tag: "andredriem/discourse:build_slim_arm64",
     extra_args: "-f slim.Dockerfile --platform linux/arm64",
   },
   base: {
     name: "base",
-    tag: "discourse/base:build",
+    tag: "andredriem/discourse:build",
     extra_args: "-f release.Dockerfile",
   },
   base_arm64: {
     name: "base",
-    tag: "discourse/base:build_arm64",
+    tag: "andredriem/discourse:build_arm64",
     extra_args: "-f release.Dockerfile --platform linux/arm64 --build-arg=\"tag=build_slim_arm64\"",
   },
   discourse_test_build: {
     name: "discourse_test",
-    tag: "discourse/discourse_test:build",
+    tag: "andredriem/discourse_test:build",
   },
   discourse_test_build_arm64: {
     name: "discourse_test",
-    tag: "discourse/discourse_test:build_arm64",
+    tag: "andredriem/discourse_test:build_arm64",
     extra_args: "--platform linux/arm64 --build-arg=\"from_tag=build_arm64\"",
   },
   discourse_dev: {
     name: "discourse_dev",
-    tag: "discourse/discourse_dev:build",
+    tag: "andredriem/discourse_dev:build",
   },
 }
 
