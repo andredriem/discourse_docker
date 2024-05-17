@@ -61,7 +61,7 @@ end
 def build(image, cli_args)
   lines =
     run(
-      "cd #{image[:name]} && docker buildx build . --load --no-cache --tag #{image[:tag]} #{image[:extra_args] ? image[:extra_args] : ""} #{cli_args}",
+      "cd #{image[:name]} && docker buildx build . --load --tag #{image[:tag]} #{image[:extra_args] ? image[:extra_args] : ""} #{cli_args}",
     )
   if lines[-1] =~ /successfully built/
     raise "Error building the image for #{image[:name]}: #{lines[-1]}"
